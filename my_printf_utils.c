@@ -12,10 +12,10 @@ size_t	ft_strlen(const char *s)
 
 char	*ft_strchr(const char *str, int n)
 {
-	if (*str == (char)n)
-		return ((char *)str);
-	else if (!*str)
+	if (!*str)
 		return (NULL);
+	else if (*str == (char)n)
+		return ((char *)str);
 	else
 		return (ft_strchr(++str, n));
 }

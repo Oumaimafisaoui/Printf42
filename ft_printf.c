@@ -1,34 +1,5 @@
 #include "ft_printf.h"
 
-int ft_check_format(char s, va_list argument);
-
-int ft_printf(const char *input, ...)
-{
-    int index;
-    va_list arg;
-
-    if(!input)
-        return (0);
-    va_start(arg, input);
-    index = 0;
-    while (*input)
-    {
-        if (*input == '%' && ft_strchr("xXcspudi%", *(input + 1)))
-            {
-                input++;
-                index += ft_check_format(*input, arg);
-            }
-            else
-            {
-                write(1, input, 1);
-                index++;
-            }
-            input++;
-    }
-    va_end(arg);
-    return (index);
-}
-
 int ft_check_format(char s, va_list argument)
 {
     int index;
@@ -49,9 +20,36 @@ int ft_check_format(char s, va_list argument)
     else if (s == 'd' || s == 'i')
         index = ft_print_d(va_arg(argument, int));
     else
-    {
-        index++;
-        write(1, "%", 1);
-    }
+        index = write(1, &s, 1);
     return (index);
 }
+
+int ft_printf(const char *input, ...)
+{
+    int index;
+    va_list arg;
+
+    if(!input)
+        return (0);
+    va_start(arg, input);
+    index = 0;
+    while (*input)
+    {
+        if (*input == '%')
+        {
+            if (ft_strchr("xXcspudi%", *(input + 1)))
+                index += ft_check_format(*(input + 1), arg);
+            else if (*(input + 1))
+                index += write(1, input, 2);
+            input++;
+        }
+        else
+            index += write(1, input, 1);
+        if (*input)
+            input++;
+    }
+    va_end(arg);
+    return (index);
+}
+
+
