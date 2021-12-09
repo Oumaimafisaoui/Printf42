@@ -1,7 +1,16 @@
-#include "ft_printf.h"
-#include <limits.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oufisaou <oufisaou@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/09 22:08:46 by oufisaou          #+#    #+#             */
+/*   Updated: 2021/12/09 22:08:53 by oufisaou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int	ft_intlen(int n);
+#include "ft_printf.h"
 
 static int	ft_intlen(int n)
 {

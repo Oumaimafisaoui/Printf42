@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_printf_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oufisaou <oufisaou@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/09 22:11:51 by oufisaou          #+#    #+#             */
+/*   Updated: 2021/12/09 22:11:53 by oufisaou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 size_t	ft_strlen(const char *s)
@@ -20,12 +32,12 @@ char	*ft_strchr(const char *str, int n)
 		return (ft_strchr(++str, n));
 }
 
-int		ft_putstr(const char *str)
+int	ft_putstr(const char *str)
 {
 	int	index;
 
 	index = 0;
-	while(str[index])
+	while (str[index])
 	{
 		write(1, &str[index], 1);
 		index++;
@@ -35,14 +47,14 @@ int		ft_putstr(const char *str)
 
 char	*ft_strdup(const char *str)
 {
-	int	index;
-	char *dest;
+	int		index;
+	char	*dest;
 
-	dest= malloc(ft_strlen(str) + 1);
-	if(!dest)
+	dest = malloc(ft_strlen(str) + 1);
+	if (!dest)
 		return (NULL);
 	index = 0;
-	while(str[index])
+	while (str[index])
 	{
 		dest[index] = str[index];
 		index++;
@@ -50,5 +62,3 @@ char	*ft_strdup(const char *str)
 	dest[index] = '\0';
 	return (dest);
 }
-
-

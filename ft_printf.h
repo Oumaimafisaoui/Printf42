@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oufisaou <oufisaou@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/09 22:11:25 by oufisaou          #+#    #+#             */
+/*   Updated: 2021/12/09 22:11:27 by oufisaou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include <stdarg.h>
@@ -9,17 +21,15 @@ int		ft_check_format(char s, va_list arg);
 int		ft_print_str(char *s);
 int		ft_print_char(int c);
 int		ft_print_d(int nb);
-char 	*ft_strchr(const char *str, int n);
+char	*ft_strchr(const char *str, int n);
 char	*ft_utoa_base(unsigned long long nb, int base);
-char 	*ft_itoa(int n);
-size_t 	ft_strlen(const char *str);
-char 	*ft_strdup(const char *str);
+char	*ft_itoa(int n);
+size_t	ft_strlen(const char *str);
+char	*ft_strdup(const char *str);
 int		ft_print_u(unsigned int nb);
 int		ft_print_p(unsigned long p);
 int		ft_print_low_hex(unsigned int low_hex);
 int		ft_print_up_hex(unsigned int up_hex);
 int		ft_putstr(const char *str);
 
-
 #endif
-
