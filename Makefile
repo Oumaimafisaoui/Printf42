@@ -8,7 +8,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 OBJS = $(SRC:.c=.o)
 
-%.o:%.c
+%.o:%.c ft_printf.h
 	$(CC) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
