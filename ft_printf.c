@@ -55,11 +55,3 @@ int ft_check_format(char s, va_list argument)
     }
     return (index);
 }
-#include <stdio.h>
-int main()
-{
-    char*  p = NULL;
-    ft_printf("%%%s\n", p);
-    printf("%%%s", p);
-}
-
