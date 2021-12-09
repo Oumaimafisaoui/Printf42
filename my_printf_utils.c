@@ -1,43 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   my_printf_utils.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: oufisaou <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 20:08:20 by oufisaou          #+#    #+#             */
-/*   Updated: 2021/12/06 21:36:38 by oufisaou         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ft_printf.h"
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	index;
+	size_t	i;
 
-	index = -1;
-	while (s[index] != '\0')
-		index++;
-	return (index);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
 char	*ft_strchr(const char *str, int n)
 {
-	int	l_str;
-
-	l_str = ft_strlen(str);
-	while (l_str >= 0)
-	{
-		if (*str == (char)n)
-			return ((char *)str);
-		str++;
-		l_str--;
-	}
-	return (NULL);
+	if (*str == (char)n)
+		return ((char *)str);
+	else if (!*str)
+		return (NULL);
+	else
+		return (ft_strchr(++str, n));
 }
 
-int		ft_putstr(char *str)
+int		ft_putstr(const char *str)
 {
 	int	index;
 

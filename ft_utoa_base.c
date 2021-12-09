@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_utoa_base.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: oufisaou <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 17:44:06 by oufisaou          #+#    #+#             */
-/*   Updated: 2021/12/06 21:14:28 by oufisaou         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ft_printf.h"
 
 static size_t	len_int(unsigned long long nb, int base);
@@ -23,7 +11,7 @@ char *ft_utoa_base(unsigned long long nb, int base)
 	if(nb == 0)
 		return (ft_strdup("0"));
 	l = len_int(nb, base);
-	res = (char *)malloc(l + 1 * sizeof(char));
+	res = (char *)malloc(sizeof(char) * (l + 1 ));
 	if(res == NULL)
 		return (NULL);
 	return (len_str(res, l, nb, base));	
